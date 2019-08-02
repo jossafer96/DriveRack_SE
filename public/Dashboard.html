@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>DriveRack</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+    
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/styledash.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/icon/favicon.ico">
+    <style>
+     
+
+    </style>
+    
+</head>
+
+<body>
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- header area start -->
+    <header id="header">
+        <div class="header-area">
+            <div class="container">
+				
+                <div class="row">					
+					<div class="menu-area" style="line-height: 5;">						
+                        <div class="">								
+                            <div class="logo">
+                                <a href="index.html"><img src="assets/img/icon/logo.png" alt="Zeedapp - App Landing Template"></a>
+                                <a href="index.html"><img src="assets/img/icon/nombre.png" style="width: 140px"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 hidden-xs hidden-sm">
+                                <div class="main-menu">
+                                        <div class="user">
+                                                <div class="user-name js-toggle-menu">
+                                                  <span>Juan Perez</span>
+                                                  <span class="entypo-left-open"></span>
+                                                </div>
+                                                <div class="user-nav">
+                                                  <a href="#">
+                                                    <span class="entypo-cog"></span>
+                                                    <label>Configuracion</label>
+                                                  </a>
+                                                  <a href="#">
+                                                    <span class="entypo-lifebuoy"></span>
+                                                    <label>Notificaciones</label>
+                                                  </a>
+                                                  <a href="#">
+                                                    <span class="entypo-logout"></span>
+                                                    <label>Cerrar Sesion</label>
+                                                  </a>
+                                                </div>
+                                              </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-xs-12 visible-sm visible-xs">
+                                <div class="mobile_menu"></div>
+                            </div>
+                       
+                              
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="dash-area">
+    <div class="container">	
+        <div class="row">	
+            <h1>Mi Sitios</h1>				
+               <div class="dash">
+                    <div class="product-name">
+                        <span>Facebook</span>
+                        <h6>www.facebook.com</h6>
+                    </div>
+                    <div class="overlay">
+                    <div class="detail">
+                        <span>Detalles</span>
+                        <span class="fa fa-pencil"></span>
+                    </div>
+                </div>
+               </div>
+               <div class="dash ">
+                    <div class="product-name">
+                        <span>Facebook</span>
+                        <h6>www.facebook.com</h6>
+                    </div>
+                    <div class="overlay">
+                    <div class="detail">
+                        <span>Detalles</span>
+                        <span class="fa fa-pencil"></span>
+                    </div>
+                </div>
+               </div>
+               <div class="dash ">
+                    <div class="product-name">
+                        <span>Facebook</span>
+                        <h6>www.facebook.com</h6>
+                    </div>
+                    <div class="overlay">
+                    <div class="detail">
+                        <span>Detalles</span>
+                        <span class="fa fa-pencil"></span>
+                    </div>
+                </div>
+               </div>
+               <div class="dash ">
+                   <a href="editor.html"  rel="noopener noreferrer">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </a>
+               </div>
+         </div>
+    </div>
+</section>
+                   
+	
+	
+    <!-- footer area end -->
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.2.0.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/counterup.js"></script>
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script>
+        (function($){
+  
+  $.modal = function (el, options) {
+      this.options = options;
+      this.$el = $(el);
+      this.$target = $(el.hash || this.$el.attr('data-target'));
+      this.$backdrop = $('.modal-backdrop');
+    
+      if (this.$target.length) {
+        this.$el.data("modal", this);
+        this.init();
+      }
+    };
+  
+  $.modal.prototype = {
+    
+    init: function() {
+      var self = this,
+          settings,
+          backdrop = $('<div/>').addClass('modal-backdrop fade');
+    
+      if (!self.$backdrop.length) {
+        self.$backdrop = backdrop.appendTo('body');
+      }
+    
+      self.settings = settings = $.extend({}, self.defaults, self.options);
+      
+      self.$target.on('click', function(e) { self.hide(e) });
+      self.$el.on('click', function(e) { self.show(e) }); 
+    },
+    
+    toggle: function(e) {
+      return (this.$target.hasClass('in')) ? this.hide(e) : this.show(e); 
+    },
+    
+    show: function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.$target.addClass('in');
+      this.$backdrop.addClass('in');
+      $('body').addClass('modal-open');
+    },
+    
+    hide: function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      var className = e.target.className;
+
+      if (className == 'modal-dialog' || className == 'close') {
+        this.$target.removeClass('in');
+        this.$backdrop.removeClass('in');
+        $('body').removeClass('modal-open');
+      }
+    },
+    
+    defaults: {
+    
+    }
+    
+  };
+  
+  $.fn.modal = function(options) {
+    return this.each(function() {
+      new $.modal(this, options);
+    });
+  };  
+  
+  // self-instantiate on elements with
+  // data-toggle='popover'
+  $(document).ready(function() {
+    $('[data-toggle=modal]').modal();
+  });
+}(jQuery));
+
+var appId = '';
+    url = 'http://openexchangerates.org/api/latest.json?app_id=' + appId;
+
+// Load exchange rates data via AJAX:
+$.getJSON(
+  // NB: using Open Exchange Rates here, but you can use any source!
+    url,
+    function(data) {
+        console.log(data);
+        // Check money.js has finished loading:
+        if ( typeof fx !== "undefined" && fx.rates ) {
+            fx.rates = data.rates;
+            fx.base = data.base;
+        } else {
+            // If not, apply to fxSetup global:
+            var fxSetup = {
+                rates : data.rates,
+                base : data.base
+            }
+        }
+    }
+);
+ 
+var conversionDefault,
+    currencyDefault = 'USD';
+
+$.fn.updateCurrency = function() {
+    var el = $(this),
+        currency = parseFloat($.trim(el.val()));
+    
+    if (conversionDefault && currency && conversionDefault != currencyDefault) {
+      var converted = fx.convert(currency, {from: currencyDefault, to: conversionDefault}).toFixed(3),
+          text = [converted, conversionDefault].join(' ');
+      console.log(text);
+      el.attr('title', text);
+      el.next('.conversion').remove();
+      $("<span/>").addClass('conversion').text(text).insertAfter(el);
+    }
+}
+
+$(document).on('click', '.js-toggle-menu', function() {
+  $(this).closest('.user').toggleClass('expand');
+
+  $('.conversionDefault').on('change', function() {
+    conversionDefault = this.value;
+    
+    $('input.currency').each(function() {
+      $(this).updateCurrency();
+    });
+  });
+  
+  $('input.currency').on('keyup', function() {
+    $(this).updateCurrency();
+  });
+});
+
+$(document).on('click', '.main-nav a', function() {
+  $(this).addClass('current').siblings().removeClass('current');
+  $('.subnav').toggleClass('show');
+});
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+.dash {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+ 
+  height: 195px;
+  margin: 15px 0 30px;
+  box-shadow: 0 2px 15px 0px rgba(0, 0, 0, 0.2);
+ float: left;
+ margin: 2rem;
+}
+.dash:hover .overlay {
+  opacity: 1;
+}
+.dash-area {
+  align-items: center;
+    height: auto;
+    padding-top: 80px;
+    display: grid;
+}
+.detail > span {
+  cursor: pointer;
+}
+.detail > span:nth-child(1) {
+  width: 80%;
+  height: 20px;
+  background-color: transparent;
+  padding: 10px 40px;
+  border-radius: 50px;
+  border: 3px solid white;
+  color: white;
+}
+.detail > span:nth-child(2) {
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 19px;
+}
+.overlay {
+  opacity: 0;
+  background: #303F9F;
+  background:linear-gradient(90deg, #31708f, #303f9f);
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all ease-in-out 200ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.product-name {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  color: #303F9F;
+  font-size: 3rem;
+}
+
+.product-name span{
+  line-height: 2;
+}
+.dash .glyphicon{
+  font-size: 80px;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .dash{
+    width: 90%;
+  }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .dash{
+    width: 43%;
+  }
+} 
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .dash{
+    width: 44%;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .dash{
+    width: 29%;
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .dash{
+    width: 20%;
+  }
+}
+
+
+
+
+
+
+.user span {
+  
+  padding: 0 10px;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+
+
+.subnav {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 0.875em;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 200ms;
+}
+.subnav.show {
+  max-height: 50px;
+  opacity: 1;
+}
+.subnav a {
+  display: inline-block;
+  margin: 0 10px;
+  margin-bottom: -1px;
+  padding: 0 5px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+}
+.subnav a:hover {
+  color: #333;
+}
+.subnav a.current {
+  color: #e25d5b;
+  border-bottom-color: #e25d5b;
+}
+
+.main-nav {
+  padding: 0 10px;
+}
+.main-nav a {
+  padding: 0 10px;
+}
+.main-nav a:hover, .main-nav a.current {
+  color: white;
+}
+
+.user {
+  float: right;
+  position: relative;
+  display: inline-block;
+}
+.user.expand .user-name {
+  right: 100%;
+}
+.user.expand .entypo-left-open {
+  transform: rotate(180deg);
+}
+.user.expand .user-nav {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.entypo-left-open {
+  display: inline-block;
+  transition: transform 250ms ease-in-out;
+}
+
+.user-name {
+  white-space: nowrap;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  transition: right 200ms ease;
+  box-sizing: border-box;
+  border-right: 2px solid rgba(255, 255, 255, 0.85);
+  height: 100%;
+}
+.user-name:hover {
+  color: white;
+}
+
+.user:not(.expand) .entypo-left-open {
+  animation: glow 1.5s infinite;
+}
+
+.user-nav {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  padding: 0 15px;
+  
+  box-shadow: inset 1px 0 4px rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.25);
+  transition: opacity 250ms;
+}
+.user-nav a {
+  display: inline-block;
+  text-align: center;
+  min-width: 20px;
+  padding: 0 15px;
+  /* margin: auto 0; */
+  /* margin: auto; */
+  /* margin-bottom: auto; */
+  margin-top: 7%;
+  color: rgba(255, 255, 255, 0.5);
+  /* vertical-align: top; */
+  text-decoration: none;
+}
+.user-nav a:hover {
+  color: white;
+}
+.user-nav a:last-child {
+  padding: 0 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+.user-nav label {
+  font-size: 12px;
+  line-height: 20px;
+}
+.user-nav label,
+.user-nav span {
+  display: block;
+  cursor: inherit;
+}
+.user-nav span {
+  line-height: 24px;
+  margin: 0;
+}
+.user-nav span:hover {
+  color: white;
+}
+.dash a:hover{
+  color: #f06529;
+}
+.dash a{
+  color: #081c4f;
+}
