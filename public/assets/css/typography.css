@@ -75,10 +75,11 @@ h6 {
 }
 
 p {
+    
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    letter-spacing: 0;
+    font-size: 2rem;
+    font-weight: 500; 
+    letter-spacing: 0.5px;
     line-height: 28px;
     margin: 0;
 }
@@ -123,7 +124,7 @@ blockquote {
 
 blockquote::before {
     color: #4e5665;
-    content: "";
+    content: "ï„";
     font-family: FontAwesome;
     font-size: 36px;
     left: 20px;

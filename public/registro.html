@@ -62,37 +62,37 @@
 
     <div class="contenedor-form">
 		<div class="wrap">
-            <h2 style="color:#f06529;; margin-bottom: 15px; ">Resgistrate</h2>	
+            <h2 style="color:white;; margin-bottom: 15px; ">Resgistrate</h2>	
 			<form action="" class="formulario" name="formulario_registro" method="get">
 				<div>
 					<div class="input-group">
-						<input type="text" id="nombre" name="nombre">
-						<label class="label" for="nombre">Nombre:</label>
+						<input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+						
 					</div>
 					<div class="input-group">
-						<input type="email" id="email" name="email">
-						<label class="label" for="email">Correo:</label>
+						<input type="email" id="correo"placeholder="Correo" name="email">
+						
 					</div>
 					<div class="input-group">
-						<input type="password" id="pass" name="pass">
-						<label class="label" for="pass">Contraseña:</label>
+						<input type="password" id="contrasena" placeholder="Contraseña" name="pass">
+						
 					</div>
 					<div class="input-group">
-						<input type="password" id="pass2" name="pass2">
-						<label class="label" for="pass2">Repetir Contraseña:</label>
+						<input type="password" id="contrasenarep" placeholder="Repetir Contraseña" name="pass2">
+						
 					</div>
 					<div class="input-group radio">
-						<input type="radio" name="sexo" id="hombre" value="Hombre">
+						<input type="radio" name="genero" id="hombre" value="Hombre">
 						<label for="hombre">Hombre</label>
 
-						<input type="radio" name="sexo" id="mujer" value="Mujer">
+						<input type="radio" name="genero" id="mujer" value="Mujer">
 						<label for="mujer">Mujer</label>
 					</div>
 					<div class="input-group checkbox">
 						<input type="checkbox" name="terminos" id="terminos" value="true">
 						<label for="terminos">Acepto los terminos y condiciones</label>
 					</div>
-                    <input type="submit" id="btn-submit" value="Enviar">
+                    <input type="button" onclick="registrarUsuario()" value="Enviar">
                     
                     <a class='btn fb'>
     
@@ -205,125 +205,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="assets/js/jquery.waypoints.min.js"></script>
     <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
     <script src="assets/js/theme.js"></script>
-    <script>
-        (function(){
-	var formulario = document.formulario_registro,
-		elementos = formulario.elements;
-
-	//Functions
-	var validarInputs = function(){
-		for(var i =0; i < elementos.length; i++){
-			if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password" ) {
-				if (elementos[i].value.length == 0) {
-					console.log('el campo ' + elementos[i].name + ' esta incompleto');
-					elementos[i].className = elementos[i].className + ' error';
-					return false;
-				}else{
-					elementos[i].className = elementos[i].className.replace(" error", "");
-				}
-			}
-		}
-
-		if (elementos.pass.value !== elementos.pass2.value) {
-			elementos.pass.value = "";
-			elementos.pass2.value ="";
-			elementos.pass.className = elementos.pass.className + " error";
-			elementos.pass2.className = elementos.pass2.className + " error";
-		}else{
-			elementos.pass.className = elementos.pass.className.replace(" error", "");
-			elementos.pass2.className = elementos.pass2.className.replace(" error", "");
-		}
-
-		return true;
-	};
-
-	var validarRadio = function(){
-		var  opciones = document.getElementsByName('sexo');
-		resultado = false;
-		for( var i = 0; i < elementos.length; i++){
-			if (elementos[i].type == "radio" && elementos[i].name == "sexo") {
-				for (var j = 0; j < opciones.length; j++ ) {
-					if (opciones[j].checked) {
-						resultado = true;
-						break;
-					}
-				}
-				if (resultado == false) {
-					elementos[i].parentNode.className = elementos[i].parentNode.className + " error";
-					console.log('El campo sexo esta vacio');
-					return false;
-				}else{
-					elementos[i].parentNode.className = elementos[i].parentNode.className.replace(" error", "");
-					return true; 
-				}
-			}
-		}
-
-	};
-
-	var validarCheckbox = function(){
-		var  opciones = document.getElementsByName('terminos');
-		resultado = false;
-		for( var i = 0; i < elementos.length; i++){
-			if (elementos[i].type == "checkbox") {
-				for (var j = 0; j < opciones.length; j++ ) {
-					if (opciones[j].checked) {
-						resultado = true;
-						break;
-					}
-				}
-				if (resultado == false) {
-					elementos[i].parentNode.className = elementos[i].parentNode.className + " error";
-					console.log('Los terminos sin aceptar');
-					return false;
-				}else{
-					elementos[i].parentNode.className = elementos[i].parentNode.className.replace(" error", "");
-					return true; 
-				}
-			}
-		}
-	};
-
-	var enviar = function(e){
-		if (!validarInputs()) {
-			console.log('Inputs not valid');
-			e.preventDefault();
-		}else if (!validarRadio()) {
-			console.log('Radios not valid');
-			e.preventDefault();
-		}else if (!validarCheckbox()) {
-			console.log('Checkbox not valid');
-			e.preventDefault();
-		}else{
-			console.log('Sebmitted successfully');
-		}
-	};
-
-	// Funtions blur and focus
-	var focusInput = function(){
-		this.parentElement.children[1].className = "label active";
-		this.parentElement.children[0].className = this.parentElement[0].className.replace(" error", "");
-	};
-
-	var blurInput = function(){
-		if (this.value <= 0) {
-			this.parentElement.children[1].className = "label";
-			this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
-		}
-	};
-
-	//Events
-	formulario.addEventListener("submit", enviar);
-
-	for (var i = 0; i < elementos.length; i++){
-		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password" ) {
-			elementos[i].addEventListener("focus", focusInput);
-			elementos[i].addEventListener("blur", blurInput);
-		}
-	}
-
-}())
-    </script>
+    <script src="assets/js/controladorregistro.js"></script>
 </body>
 
 </html>

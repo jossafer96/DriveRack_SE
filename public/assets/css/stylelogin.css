@@ -117,7 +117,7 @@ form.login input {
 }
 
 .inputs {
-	margin-top: 5rem;
+    margin-top: 11rem
 }
 .inputs input {
 	padding: 15px 10px;
@@ -127,7 +127,7 @@ form.login input {
     border: 2px solid #ee622882;
     color: #fff;
     margin-bottom: 20px;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -141,7 +141,7 @@ form.login input {
     width: 200px;
 }
 
-form.login button {
+form.login input[type='button'] {
     background: linear-gradient(-80deg, #f06529, #e34c26);
     width: 100%;
     font-size: 20px;
@@ -169,4 +169,20 @@ main{
 }
 .logo h2{
     margin-top: 20px;
+}
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    background-color: #333;
+
+    border-radius: 100%;
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+.is-valid{
+    border: 2px solid green!important;
+}
+.is-invalid{
+    border: 2px solid red!important;
 }

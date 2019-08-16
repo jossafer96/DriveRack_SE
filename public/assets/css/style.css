@@ -1,49 +1,6 @@
-/*-----------------------------------------------------------------------------------
-
-    Template Name: Zeedapp
-    Template URI: 
-    Description: Zeedapp || App Landing Html Template
-    Author: Rashadul Islam
-    Author URI: http://rashadulislam.com/
-    Version: 1.0
-
------------------------------------------------------------------------------------
-    
-    CSS INDEX
-    ===================
-  
-    1. Theme default CSS
-    2. Home Page
-        2.1 Header Area
-        2.2 Slider Area
-        2.3 Service Area
-        2.4 About Area
-        2.5 Feature Area
-        2.6 Achivement Area
-        2.7 Screen Area
-        2.8 Testimonial Area
-        2.9 Video Area
-       2.10 Pricing Area
-       2.11 Team Area
-       2.12 Call To Action
-       2.13 Blog Post
-       2.14 Clinet Area
-       2.15 Contact Area
 
 
------------------------------------------------------------------------------------*/
-
-
-/*----------------------------------------*/
-
-
-/*  1. Theme default CSS
-/*----------------------------------------*/
-
-
-/*google font*/
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 
 .clear {
     clear: both
@@ -118,7 +75,7 @@ body {
     color: #888;
     line-height: 30px;
     -webkit-font-smoothing: antialiased;
-    /* Fix for webkit rendering */
+    font-family: 'Questrial', sans-serif!important;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -174,10 +131,10 @@ textarea {
 
 .main-menu nav ul li a {
     display: block;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 1.8rem;
+    font-weight: bold;
     color: #fff;
-    letter-spacing: 0;
+    letter-spacing: 0px;
     padding: 27px 36px;
     position: relative;
     padding-left: 0;
@@ -190,7 +147,7 @@ textarea {
     bottom: 22px;
     height: 2px;
     width: 0%;
-    background-color: #fff;
+    background-color: #f06529;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -321,6 +278,12 @@ END Header Area
     font-weight: 400;
     letter-spacing: 0;
     cursor: pointer;
+    margin: 11px;
+    
+}
+.slider-inner a:hover {
+    background-color: white;
+    color: #081c4f;
     
 }
 
@@ -622,8 +585,7 @@ END Achivement Area
     position: absolute;
     left: 50%;
     bottom: 152px;
-    width: 506px;
-    height: 546px;
+    height: 500px;
     z-index: 111;
     transform: translateX(-50%);
 }
@@ -857,7 +819,7 @@ END Video Area
     box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
 }
 .prc-head{
-        background: #5a10fb;
+        background: #081c4f;
     text-align: center;
     padding: 40px;
 }
