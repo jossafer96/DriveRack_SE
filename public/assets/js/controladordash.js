@@ -44,8 +44,13 @@ function CargarTableros(){
                 <div class="overlay" style="background-color:${color}">
                 <div class="detail" onclick="abrirModal(${Tableros[index].codigo})">
                     <span>Detalles</span>
-                    <span class="fa fa-pencil"></span>
+                    
                 </div>
+                <div class="pencil">
+                <a  href="http://localhost:3333/editor.html">
+                    <span class="fa fa-pencil" style="color:white"></span>
+                    </a>
+                    </div>
             </div>
            </div>
                     `;

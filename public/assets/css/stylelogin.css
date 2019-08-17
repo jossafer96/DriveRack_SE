@@ -104,12 +104,13 @@ form.login {
     transform: translateY(6rem);
     border-radius: 3px;
     width: 390px;
-    height: 450px;
+    
     padding-top: 5rem !important;
     padding: 0 2rem;
     background: #081c4f;
     margin: auto;
     position: relative;
+    padding-bottom: 5px;
 }
 
 form.login input {
@@ -170,19 +171,16 @@ main{
 .logo h2{
     margin-top: 20px;
 }
-.spinner {
-    width: 40px;
-    height: 40px;
-    margin: auto;
-    background-color: #333;
 
-    border-radius: 100%;
-    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-    animation: sk-scaleout 1.0s infinite ease-in-out;
-}
 .is-valid{
     border: 2px solid green!important;
 }
 .is-invalid{
     border: 2px solid red!important;
+}
+.is-visible{
+    display: block;
+}
+.is-invisible{
+    display: none;
 }

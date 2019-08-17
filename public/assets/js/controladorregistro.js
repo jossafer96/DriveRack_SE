@@ -32,6 +32,8 @@ function marcarInput(id, valido){
     }else{
         document.getElementById(id).classList.remove('is-valid');
         document.getElementById(id).classList.add('is-invalid');
+        document.getElementById(id).innerHTML='';
+	document.getElementById(id).innerHTML='';
     }
 }
 

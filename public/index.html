@@ -27,7 +27,9 @@
 <body>
     <!-- preloader area start -->
     <div id="preloader">
-        <div class="spinner"></div>
+        <div class="spinner">
+            <a href="index.html"><img src="assets/img/icon/logo.png" style="width: 140px"></a>
+        </div>
     </div>
     <!-- preloader area end -->
     <!-- header area start -->
@@ -76,7 +78,7 @@
                     <div class="slider-inner text-right">
                             
                         <h2>Crea, Administra y Gestiona tu sitio web con DriveRack</h2>
-                        <a class="" href="Dashboard.html">Pruebalo YA!</a>
+                        <a class="" onclick="abrirEditor()">Pruebalo YA!</a>
                     </div>
                 </div>
             </div>
@@ -408,6 +410,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <script>
         $('.carousel').carousel();
+        function abrirEditor(){
+            location.href="http://localhost:3333/login.html";
+        }
     </script>
 </body>
 

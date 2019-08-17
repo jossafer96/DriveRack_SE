@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
-
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 *,
 *::after,
 *::before {
@@ -1120,8 +1119,7 @@ svg {
 body {
     font-size: 1em;
     font-size: var(--text-base-size, 1em);
-    font-family: 'Open Sans', sans-serif;
-    font-family: var(--font-primary, sans-serif);
+    font-family: 'Questrial', sans-serif!important;
     color: hsl(240, 4%, 20%);
     color: var(--color-contrast-high, #313135)
 }

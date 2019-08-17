@@ -10,6 +10,8 @@ function registrarUsuario(){
         return;}
     
     console.log(persona);
+    document.getElementById("info").classList.remove('is-invisible');
+        document.getElementById("info").classList.add('is-visible');
 }
 
 function validarInputVacio(id){

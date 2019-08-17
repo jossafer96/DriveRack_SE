@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+body{
+  font-family: 'Questrial', sans-serif!important;
+}
 .dash {
   position: relative;
   display: flex;
@@ -371,4 +375,8 @@
   margin-top: 20px;
     font-size: 2rem;
     font-weight: bold;
+}
+.pencil{
+  font-size: 3rem;
+  margin: 20px;
 }

@@ -8,15 +8,16 @@
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/stylelogin.css">
 		<link rel="stylesheet" href="assets/css/jquery-ui.css">
+		<link rel="stylesheet" href="assets/css/typography1.css">
 		
 		<link rel="shortcut icon" type="image/png" href="assets/img/icon/favicon.ico">
 </head>
 <body >
-		
-		
-		
-		
-			
+	<div id="preloader">
+        <div class="spinner">
+            <a href="index.html"><img src="assets/img/icon/logo.png" style="width: 140px"></a>
+        </div>
+    </div>
 		<main>
 			
 		<form class="login">
@@ -24,7 +25,7 @@
 			<div class="logo">
 				<img src="assets/img/icon/logo.png">
 				<img src="assets/img/icon/nombre.png" class="img-fluid img-responsive">
-				<h2>Inicia Sesion</h2>
+				<h2 style="font-weight: bold;">Inicia Sesion</h2>
 			</div>
 		
 			<div class="inputs">
@@ -34,6 +35,9 @@
 				<input type="button" onclick="registrarUsuario()" value="INICIAR">
 			
 				<p>No tienes un cuenta? <a href="registro.html">Registrate</a></p>
+				<div id="info" class="alert alert-danger is-invisible" role="alert">
+					Esta cuenta no existe REGISTRATE
+				  </div>
 			</div>
 		
 		</form>
@@ -42,5 +46,12 @@
 		<script src="assets/js/jquery-3.2.0.min.js"></script>
 			<script src="assets/js/jquery-ui.js"></script>
 			<script src="assets/js/controlador.js"></script>
+			<script>
+				(()=>{
+				$(window).on('load', function() {
+				$('#preloader').delay(1000).fadeOut('slow', function() { $(this).remove(); });
+			});
+		  })();
+			  </script>
 </body>
 </html>
