@@ -3695,7 +3695,6 @@ a {
     .cd-main-content {
         padding-top: 45px;
         padding-top: var(--cd-header-height);
-        display: grid;
         grid-template-columns: 100% 1fr;
         grid-template-columns: var(--cd-sidebar-width) 1fr;
         min-height: 100vh

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8">
+    <title>DriveRack</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="usuario" content="5d83c7ad3dde242980e84a6f">
+    <link rel="shortcut icon" type="image/png" href="assets/img/icon/favicon.ico">
+    <script>document.getElementsByTagName("html")[0].className += " js";</script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/typography1.css">
+    <link rel="stylesheet" href="assets/css/styleeditor.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/content-tools.min.css">
+     
+  
+  
+</head>
+<body>
+   
+    <header class="cd-main-header js-cd-main-header content">
+        <div class="cd-logo-wrapper">
+          <a href="index.html"><img src="assets/img/icon/nombre.png" style="width: 140px"></a>
+        </div>
+        <div class="cd-search js-cd-search">
+            <form>
+              <input class="reset" type="search" placeholder="Search...">
+            </form>
+          </div>
+        
+      
+        <button class="reset cd-nav-trigger js-cd-nav-trigger" aria-label="Toggle menu"><span></span></button>
+      
+        <ul class="cd-nav__list js-cd-nav__list">
+          <li class="cd-nav__item"><a href="#0">Ayuda</a></li>
+          <li class="cd-nav__item"><a href="#0">Soporte</a></li>
+          <li class="cd-nav__item cd-nav__item--has-children cd-nav__item--account js-cd-item--has-children">
+            <a href="#0">
+                    <div id="avatar">
+
+                        </div>
+            </a>
+        
+            <ul class="cd-nav__sub-list">
+              <li class="cd-nav__sub-item"><a href="#0">Mi Perfil</a></li>
+              <li class="cd-nav__sub-item"><a href="http://localhost:3333/login.html">Cerrar Sesion</a></li>
+            </ul>
+          </li>
+        </ul>
+      </header> <!-- .cd-main-header -->
+      
+      <main class="cd-main-content text-component text-center" data-editable data-name="main-content">
+        <div class="demo-area">
+          <div class="container">
+              <div class="row">
+                  <h2>Elije una Plantilla</h2>
+                  <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4" style="margin-top: 40px;">
+                      <div class="demo-item">
+                          <div class="thumb-area">
+                              <a style="cursor: pointer"  onclick="elegirPlantilla('blog')"><img src="img/demo-thumb/blog.jpg" alt="demo image"></a>
+                              <a  class="lets-view" target="_blank"><i class="fa fa-long-arrow-right"></i></a>
+                          </div>
+                          <div class="demo-title">
+                              <h2>Blog standard</h2>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4" style="margin-top: 40px;">
+                      <div class="demo-item">
+                          <div class="thumb-area">
+                              <a  style="cursor: pointer" onclick="elegirPlantilla('blog-with-sidebar')"><img src="img/demo-thumb/blog-with-sidebar.jpg" alt="demo image"></a>
+                              <a  class="lets-view" target="_blank"><i class="fa fa-long-arrow-right"></i></a>
+                          </div>
+                          <div class="demo-title">
+                              <h2>Blog con barra lateral</h2>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4" style="margin-top: 40px;">
+                      <div class="demo-item">
+                          <div class="thumb-area">
+                              <a style="cursor: pointer" onclick="elegirPlantilla('blog-left-sidebar')" target="_blank"><img src="img/demo-thumb/blog-left-sidebar.jpg" alt="demo image"></a>
+                              <a  class="lets-view" target="_blank"><i class="fa fa-long-arrow-right"></i></a>
+                          </div>
+                          <div class="demo-title">
+                              <h2>Blog con barra lateral izquierda</h2>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4" style="margin-top: 40px;">
+                      <div class="demo-item">
+                          <div class="thumb-area">
+                              <a style="cursor: pointer" onclick="elegirPlantilla('blog-details')" target="_blank"><img src="img/demo-thumb/blog-details.jpg" alt="demo image"></a>
+                              <a  class="lets-view" target="_blank"><i class="fa fa-long-arrow-right"></i></a>
+                          </div>
+                          <div class="demo-title">
+                              <h2>Detalles del Blog</h2>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </main> <!-- .cd-main-content -->
+      <div id="preloader">
+        <div class="spinner">
+            <a href="index.html"><img src="assets/img/icon/logo.png" style="width: 140px"></a>
+        </div>
+        
+    </div><!-- .content-wrapper -->
+      <script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+      <script src="assets/js/menu-aim.js"></script>
+      <script src="assets/js/main.js"></script>
+      <script src="assets/js/jquery-3.2.0.min.js"></script>
+      <script src="assets/js/content-tools.min.js"></script>
+      
+      <script>
+        (()=>{
+        $(window).on('load', function() {
+            $.ajax({
+        url:"/login/",
+        method:"GET",
+        dataType:"json",
+        success:function(res){
+            console.log(res);
+            document.getElementById('avatar').innerHTML = `<img id="avatar" style="float: left;" src="./assets/img/upload/${res[0].perfilImg}">
+            <span>Cuenta</span>`;
+            $('#preloader').delay(1000).fadeOut('slow', function() { $(this).remove(); });
+        },
+        error:function(error){
+            console.error('error');
+            window.location.href = "/login.html";
+        }
+    });
+        
+           });
+        })();
+
+        function elegirPlantilla(plantilla) {
+    payload = new FormData();
+   payload.append('usuario', document.querySelector('meta[name=usuario]').getAttribute('content') );
+    var parametros = 'usuario='+payload.getAll('usuario');
+$.ajax({
+    url:"/dashboard/contenido/"+plantilla,
+    method:"POST",
+    data:parametros,
+    dataType:"json",
+    success:function(res){
+        console.log(res);
+        var Url = res.obj.url+res.obj._id;
+        window.open(Url, '_blank');
+    },
+    error:function(error){
+        console.error(error);
+      
+    }
+});
+}
+      </script>
+ 
+</body>
+
+</html>

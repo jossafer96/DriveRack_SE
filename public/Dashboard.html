@@ -12,6 +12,7 @@
     <link rel="shortcut icon" type="image/png" href="assets/img/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/styleeditor.css">
     <script src="https://kit.fontawesome.com/4105fe8695.js"></script>
+  
 </head>
 
 <body>
@@ -41,13 +42,15 @@
           <li class="cd-nav__item"><a href="#0">Soporte</a></li>
           <li class="cd-nav__item cd-nav__item--has-children cd-nav__item--account js-cd-item--has-children">
             <a href="#0">
-              <img src="assets/img/user.png" alt="avatar">
-              <span>Cuenta</span>
+              <div id="avatar">
+
+              </div>
+              
             </a>
         
             <ul class="cd-nav__sub-list">
-              <li class="cd-nav__sub-item"><a href="#0">Mi Perfil</a></li>
-              <li class="cd-nav__sub-item"><a href="http://localhost:3333/login.html">Cerrar Sesion</a></li>
+              <li class="cd-nav__sub-item" onclick="abrirModalPerfil()"><a href="#0">Mi Perfil</a></li>
+              <li class="cd-nav__sub-item"><a href="login/logout">Cerrar Sesion</a></li>
             </ul>
           </li>
         </ul>
@@ -59,9 +62,12 @@
           <div class="box"></div>
         
         <div class="perfil">
-        <img src="assets/img/user.png">
+          <div id="imgP">
+              
+          </div>
         
-        <h3 class="nombre">Nombre Usuario</h3>
+        
+        <h3 class="nombre" id="nombre"></h3>
         <h4 class="descripcion">Descripcion</h4>
         
         <div class="iconos">
@@ -77,12 +83,10 @@
         </div>
       </nav>
     
-      <div class="cd-content-wrapper">
-        
-      </div> <!-- .content-wrapper -->
+     <!-- .content-wrapper -->
       <section class="dash-area">
         <div class="container">	
-            <h1>Mi Sitios</h1>
+            <h1 >Mi Sitios</h1>
             
             <div class="row" id="tableros">	
             </div>				
@@ -96,24 +100,33 @@
     </main> 
     <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
       <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title" id="modal-1-content">
+          
+         
+          
+        </div>
+      </div>
+    </div>
+    <div class="modal micromodal-slide" id="modal-2" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" style="width: 1000px" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
           <header class="modal__header">
-            <h2 class="modal__title" id="modal-1-title">
-              Post
+            <h2 class="modal__title" id="modal-2-title">
+              Perfil
             </h2>
             <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
           </header>
-          <main class="modal__content container" id="modal-1-content">
-         
+          <main class="modal__content container" id="modal-2-content">
+  
           </main>
           <footer class="modal__footer">
-            <button class="modal__btn modal__btn-primary">Editar Post</button>
+          
             
           </footer>
         </div>
       </div>
     </div>
-      
+      <input type="hidden" name="">
     <!-- Scripts -->
     <script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
     <script src="assets/js/menu-aim.js"></script>
@@ -123,11 +136,14 @@
     <script src="assets/js/randomcolor.js"></script>
     <script src="assets/js/controladordash.js"></script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-    
+
     <script>
         (()=>{
         $(window).on('load', function() {
+          CargarInformacion();
+        CargarTableros();
         $('#preloader').delay(1000).fadeOut('slow', function() { $(this).remove(); });
+       
     });
   })();
       </script>

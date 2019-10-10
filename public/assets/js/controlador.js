@@ -3,15 +3,34 @@ var Inputs = [
     {id:'contrasena', valido:false}
 ];
 
-function registrarUsuario(){
+function logearUsuario(){
     
     let persona = validarInputs();
     if (persona==null || persona == undefined){
         return;}
     
     console.log(persona);
-    document.getElementById("info").classList.remove('is-invisible');
-        document.getElementById("info").classList.add('is-visible');
+    $.ajax({
+        url:"/login/authenticate",
+        method:"POST",
+        data:persona,
+        dataType:"json",
+        success:function(res){
+            console.log(res);
+            if (res.success)
+                window.location.href = "/dashboard.html";
+            else{
+                document.getElementById("info").classList.remove('is-invisible');
+                document.getElementById("info").classList.add('is-visible');
+            } 
+                
+                
+        },
+        error:function(error){
+            console.error(error);
+        }
+    });
+   
 }
 
 function validarInputVacio(id){
@@ -49,11 +68,9 @@ function validarInputs(){
    
     
     
-    let persona = {
-        correo: document.getElementById('correo').value,
-        contrasena: document.getElementById('contrasena').value
+    let persona = 'correo='+document.getElementById('correo').value+'&'+'contrasena='+document.getElementById('contrasena').value
         
-    }
+    
 
     return persona;
 }

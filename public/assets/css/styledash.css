@@ -24,6 +24,8 @@ body{
     height: auto;
     padding-top: 20px;
     display: grid;
+    float: right;
+    width: 80%;
 }
 .detail > span {
   cursor: pointer;
@@ -62,16 +64,17 @@ body{
 }
 .product-name {
   
-  
+  text-align: center;
   color: black;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .product-name span{
  font-weight: bolder;
 }
 .product-name h6{
+  padding: 25px;
   font-weight: 100;
-  font-size: 1.3rem;;
+  font-size: 1rem;;
  }
 
 .product-name span{
@@ -379,4 +382,73 @@ body{
 .pencil{
   font-size: 3rem;
   margin: 20px;
+  cursor: pointer;
+}
+
+
+
+
+
+.custom-file-upload-hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-file-upload {
+  display: block;
+  width: auto;
+  font-size: 16px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.custom-file-upload label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.file-upload-input {
+  width: 300px;
+  color: #fff;
+  font-size: 16px;
+  padding: 11px 17px;
+  border: none;
+  background-color: #c0392b;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  float: left;
+  /* IE 9 Fix */
+}
+.file-upload-input:hover, .file-upload-input:focus {
+  background-color: #ab3326;
+  outline: none;
+}
+
+.file-upload-button {
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 11px 20px;
+  border: none;
+  margin-left: -1px;
+  background-color: #962d22;
+  float: left;
+  /* IE 9 Fix */
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.file-upload-button:hover {
+  background-color: #6d2018;
 }

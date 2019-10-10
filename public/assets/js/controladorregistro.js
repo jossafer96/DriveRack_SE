@@ -12,8 +12,26 @@ function registrarUsuario(){
     if (persona==null || persona == undefined){
         return;}
     
-	console.log(persona);
-	location.href="http://localhost:3333/Dashboard.html";
+    console.log(persona);
+    $.ajax({
+        url:"/registro",
+        method:"POST",
+        data:persona,
+        dataType:"json",
+        success:function(res){
+            console.log(res);
+            if (res.status == 1){
+                
+                window.location.href = "/login.html";
+            }else 
+                console.log(res.mensaje);
+                
+        },
+        error:function(error){
+            console.error(error);
+        }
+    });
+	
 }
 
 function validarInputVacio(id){
@@ -66,7 +84,7 @@ function validarInputs(){
 		let generoInput = document.querySelector('input[type="radio"][name="genero"]:checked');
 	
     let persona = {
-		nombre: document.getElementById('nombre').value,
+		nombreCompleto: document.getElementById('nombre').value,
 		correo: document.getElementById('correo').value,
 		contrasena:(contra1==contra2)?document.getElementById('contrasena').value:"" ,
         genero:  (generoInput==null)?"":generoInput.value
