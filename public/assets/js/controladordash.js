@@ -34,7 +34,7 @@ function CargarInformacion(){
 }
 
 function abrirPost(id) {
-    window.open('http://localhost:3333/dashboard/editar/'+id, '_blank');
+    window.open('/dashboard/editar/'+id, '_blank');
 }
 
 function actualizarUsuario(){
@@ -278,7 +278,7 @@ function abrirModal(codigo){
                    
                       <h4>URL:</h4>
                       <br>
-                      <a href="http://localhost:3333/dashboard/contenido/${res[0]._id}">http://localhost:3333/dashboard/contenido/${res[0]._id}</a>
+                      <a href="/dashboard/contenido/${res[0]._id}">/dashboard/contenido/${res[0]._id}</a>
                      
                     </div>
                     <br>
