@@ -47,6 +47,6 @@ const upload = multer({storage});
 		return res.send(req.file);
 	})
 	// Levantar el servidor en el puerto 3333
-	app.listen (3333, function () {
+	app.listen (3000, function () {
 	    console.log ("Servidor levantado en el puerto 3333");
 	});
