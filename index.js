@@ -30,7 +30,7 @@ const upload = multer({storage});
 	// Crear una aplicación de nodejs con express
 	var app = express ();
 	app.use(session({secret:"ASDFE$%#%",resave:false, saveUninitialized:true}));
-
+	app.set('port', process.env.PORT || 3000);
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ extended: true }));
 	app.use("/login",usuariosRouter);
@@ -47,6 +47,6 @@ const upload = multer({storage});
 		return res.send(req.file);
 	})
 	// Levantar el servidor en el puerto 3333
-	app.listen (3000, function () {
+	app.listen (app.get('port'), function () {
 	    console.log ("Servidor levantado en el puerto 3333");
 	});
